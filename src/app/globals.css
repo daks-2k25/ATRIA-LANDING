@@ -1,0 +1,185 @@
+@import "tailwindcss";
+
+:root {
+  /* Petroleum green — accent only, never a full-bleed surface */
+  --color-ink: #0f2e2b;
+  --color-ink-2: #163a35;
+  --color-ink-3: #0a211e;
+
+  /* Cream / off-white / white — the dominant surfaces */
+  --color-white: #ffffff;
+  --color-cream: #fdfbf6;
+  --color-cream-soft: #f6f2e8;
+  --color-sage: #eef3ef;
+  --color-card: #ffffff;
+
+  /* Amber / orange — used sparingly */
+  --color-amber: #e8923c;
+  --color-amber-light: #f2a94e;
+  --color-amber-dark: #c9722a;
+
+  /* Text */
+  --color-text: #14211f;
+  --color-text-muted: #64756f;
+  --color-text-soft: #8b978f;
+  --color-text-on-ink: #f4efe2;
+  --color-text-on-ink-muted: #a9beb8;
+
+  /* Lines */
+  --color-line: #e7e1d2;
+  --color-line-soft: #eeeadd;
+  --color-line-on-ink: rgba(244, 239, 226, 0.12);
+
+  --shadow-soft: 0 1px 2px rgba(15, 46, 43, 0.05), 0 12px 32px -18px rgba(15, 46, 43, 0.14);
+  --shadow-soft-lg: 0 2px 8px rgba(15, 46, 43, 0.06), 0 30px 70px -24px rgba(15, 46, 43, 0.22);
+}
+
+@theme inline {
+  --color-ink: var(--color-ink);
+  --color-ink-2: var(--color-ink-2);
+  --color-ink-3: var(--color-ink-3);
+  --color-white: var(--color-white);
+  --color-cream: var(--color-cream);
+  --color-cream-soft: var(--color-cream-soft);
+  --color-sage: var(--color-sage);
+  --color-card: var(--color-card);
+  --color-amber: var(--color-amber);
+  --color-amber-light: var(--color-amber-light);
+  --color-amber-dark: var(--color-amber-dark);
+  --color-text: var(--color-text);
+  --color-text-muted: var(--color-text-muted);
+  --color-text-soft: var(--color-text-soft);
+  --color-text-on-ink: var(--color-text-on-ink);
+  --color-text-on-ink-muted: var(--color-text-on-ink-muted);
+  --color-line: var(--color-line);
+  --color-line-soft: var(--color-line-soft);
+  --color-line-on-ink: var(--color-line-on-ink);
+
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-jakarta);
+
+  --shadow-soft: var(--shadow-soft);
+  --shadow-soft-lg: var(--shadow-soft-lg);
+
+  --animate-marquee: marquee 40s linear infinite;
+  --animate-float: float 7s ease-in-out infinite;
+  --animate-float-delay: float 7s ease-in-out infinite 1.4s;
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-14px);
+    }
+  }
+}
+
+body {
+  background: var(--color-cream);
+  color: var(--color-text);
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
+
+::selection {
+  background: var(--color-amber);
+  color: var(--color-ink-3);
+}
+
+.font-display {
+  font-family: var(--font-display), var(--font-sans), sans-serif;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.mesh-light {
+  background-image:
+    radial-gradient(38% 45% at 14% 8%, rgba(232, 146, 60, 0.14), transparent 70%),
+    radial-gradient(42% 50% at 88% 0%, rgba(15, 46, 43, 0.1), transparent 65%),
+    radial-gradient(55% 60% at 50% 100%, rgba(149, 213, 178, 0.22), transparent 70%);
+}
+
+/*
+ * Velaris — experimental hero background layer.
+ * Adapted from a static two-stop radial-gradient snippet into a slow, GPU-cheap
+ * drift (background-position only, no JS/canvas) using Atria's light + petroleum
+ * + amber palette instead of the original black/purple demo colors.
+ */
+.velaris-bg {
+  position: absolute;
+  inset: 0;
+  background-color: var(--color-cream);
+  background-image:
+    radial-gradient(130% 110% at 50% 0%, rgba(15, 46, 43, 0.16) 0%, rgba(15, 46, 43, 0.05) 34%, transparent 62%),
+    radial-gradient(70% 70% at 82% 12%, rgba(232, 146, 60, 0.12) 0%, transparent 58%),
+    radial-gradient(80% 80% at 12% 92%, rgba(149, 213, 178, 0.4) 0%, transparent 62%);
+  background-repeat: no-repeat;
+  background-size: 160% 160%;
+  background-position:
+    50% 0%,
+    82% 12%,
+    12% 92%;
+  animation: velaris-drift 26s ease-in-out infinite;
+  will-change: background-position;
+}
+
+@keyframes velaris-drift {
+  0%,
+  100% {
+    background-position:
+      50% 0%,
+      82% 12%,
+      12% 92%;
+  }
+  50% {
+    background-position:
+      46% 6%,
+      76% 18%,
+      18% 86%;
+  }
+}
+
+.spotlight-card {
+  position: relative;
+}
+
+.spotlight-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    280px circle at var(--spot-x, 50%) var(--spot-y, 50%),
+    rgba(232, 146, 60, 0.14),
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+}
+
+.spotlight-card:hover::before {
+  opacity: 1;
+}
