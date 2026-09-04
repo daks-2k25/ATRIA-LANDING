@@ -41,8 +41,8 @@ export function Hero() {
         </Reveal>
 
         <Reveal delay={0.24} className="mt-9 flex flex-col items-center gap-3 sm:flex-row">
-          <Button href="mailto:contato@atria.app" size="lg">
-            Agendar demonstração
+          <Button href="/7-dias-gratis" size="lg">
+            7 dias grátis
           </Button>
           <Button href="/funcionalidades" size="lg" variant="outline-dark" icon={false}>
             Ver funcionalidades

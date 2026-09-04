@@ -17,12 +17,14 @@ type ButtonAsLink = CommonProps & {
   href: string;
   onClick?: () => void;
   type?: never;
+  disabled?: undefined;
 };
 
 type ButtonAsButton = CommonProps & {
   href?: undefined;
   onClick?: () => void;
   type?: "button" | "submit";
+  disabled?: boolean;
 };
 
 type ButtonProps = ButtonAsLink | ButtonAsButton;
@@ -121,8 +123,18 @@ function content(variant: Variant, children: React.ReactNode, icon?: boolean) {
   }
 }
 
-export function Button({ children, variant = "primary", size = "md", icon = true, className, href, onClick, type = "button" }: ButtonProps) {
-  const classes = classesFor(variant, size, className);
+export function Button({
+  children,
+  variant = "primary",
+  size = "md",
+  icon = true,
+  className,
+  href,
+  onClick,
+  type = "button",
+  disabled,
+}: ButtonProps) {
+  const classes = classesFor(variant, size, cn(disabled && "pointer-events-none opacity-60", className));
 
   if (href) {
     return (
@@ -133,7 +145,7 @@ export function Button({ children, variant = "primary", size = "md", icon = true
   }
 
   return (
-    <button type={type} onClick={onClick} className={classes}>
+    <button type={type} onClick={onClick} disabled={disabled} className={classes}>
       {content(variant, children, icon)}
     </button>
   );

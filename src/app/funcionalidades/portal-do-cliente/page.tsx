@@ -23,8 +23,8 @@ export default function PortalDoClientePage() {
         description="Um espaço próprio para cada cliente acompanhar entregas, aprovar conteúdos, ver contratos e financeiro — direto na plataforma da agência."
         breadcrumb={[{ label: "Portal do Cliente", href: "/funcionalidades/portal-do-cliente" }]}
       >
-        <Button href="mailto:contato@atria.app" size="lg">
-          Agendar demonstração
+        <Button href="/7-dias-gratis" size="lg">
+          7 dias grátis
         </Button>
       </PageHero>
 

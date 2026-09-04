@@ -5,7 +5,7 @@ import { Reveal } from "@/components/ui/Reveal";
 export function PageCTA({
   title,
   description,
-  buttonLabel = "Agendar demonstração",
+  buttonLabel = "7 dias grátis",
 }: {
   title: React.ReactNode;
   description: React.ReactNode;
@@ -23,7 +23,7 @@ export function PageCTA({
           <p className="text-lg leading-relaxed text-text-muted">{description}</p>
         </Reveal>
         <Reveal delay={0.16} className="mt-8">
-          <Button href="mailto:contato@atria.app" size="lg">
+          <Button href="/7-dias-gratis" size="lg">
             {buttonLabel}
           </Button>
         </Reveal>

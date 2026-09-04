@@ -17,8 +17,8 @@ export function CategoryPageTemplate({ category }: { category: FeatureCategory }
           { label: category.label, href: `/funcionalidades/${category.slug}` },
         ]}
       >
-        <Button href="mailto:contato@atria.app" size="lg">
-          Agendar demonstração
+        <Button href="/7-dias-gratis" size="lg">
+          7 dias grátis
         </Button>
       </PageHero>
 

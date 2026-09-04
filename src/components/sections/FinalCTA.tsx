@@ -23,8 +23,8 @@ export function FinalCTA() {
         </Reveal>
 
         <Reveal delay={0.16} className="mt-9">
-          <Button href="mailto:contato@atria.app" size="lg">
-            Agendar demonstração
+          <Button href="/7-dias-gratis" size="lg">
+            7 dias grátis
           </Button>
         </Reveal>
       </Container>

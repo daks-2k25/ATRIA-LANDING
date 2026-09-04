@@ -20,8 +20,8 @@ export default function InteligenciaArtificialPage() {
         description="Sem exagero de recursos: a IA da Atria atua onde a equipe mais perde tempo — planejamento de conteúdo e qualificação comercial."
         breadcrumb={[{ label: "Inteligência Artificial", href: "/funcionalidades/inteligencia-artificial" }]}
       >
-        <Button href="mailto:contato@atria.app" size="lg">
-          Agendar demonstração
+        <Button href="/7-dias-gratis" size="lg">
+          7 dias grátis
         </Button>
       </PageHero>
 

@@ -150,8 +150,8 @@ export function Navbar() {
           </nav>
 
           <div className="hidden lg:block">
-            <Button href="mailto:contato@atria.app" size="md">
-              Agendar demonstração
+            <Button href="/7-dias-gratis" size="md">
+              7 dias grátis
             </Button>
           </div>
 
@@ -224,8 +224,8 @@ export function Navbar() {
               </AnimatePresence>
 
               <div className="p-2 pt-3">
-                <Button href="mailto:contato@atria.app" size="md" className="w-full" onClick={() => setOpen(false)}>
-                  Agendar demonstração
+                <Button href="/7-dias-gratis" size="md" className="w-full" onClick={() => setOpen(false)}>
+                  7 dias grátis
                 </Button>
               </div>
             </nav>
