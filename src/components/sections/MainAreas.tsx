@@ -4,6 +4,7 @@ import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { RevealGroup, RevealItem, Reveal } from "@/components/ui/Reveal";
 import { SpotlightCard } from "@/components/ui/SpotlightCard";
+import { ApprovalFlowDiagram } from "@/components/sections/ApprovalFlowDiagram";
 import { mainAreas } from "@/data/areas";
 import { portalFeatures } from "@/data/portal";
 
@@ -15,10 +16,12 @@ export function MainAreas() {
     <section id="funcionalidades" className="bg-white py-20 sm:py-28">
       <Container>
         <SectionHeading
-          kicker="Principais áreas"
-          title="Tudo o que a sua agência precisa, em um só produto"
-          description="Explore cada frente da Atria em profundidade — cada área tem uma página própria."
+          kicker="Aprovação"
+          title="Como funciona a aprovação interna e portal do cliente?"
+          description="Do briefing à publicação, cada entrega passa por revisão interna antes de chegar ao cliente — com retorno automático em caso de reprovação."
         />
+
+        <ApprovalFlowDiagram />
 
         <Reveal delay={0.1} className="mt-12">
           <Link
@@ -72,8 +75,12 @@ export function MainAreas() {
                     </span>
                     <ArrowUpRight className="size-4 text-text-soft transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-amber-dark" />
                   </div>
-                  <h3 className="mt-5 font-display text-lg font-semibold text-ink">{area.label}</h3>
-                  <p className="mt-2 text-[15px] leading-relaxed text-text-muted">{area.cardSummary}</p>
+                  <h3 className="mt-5 font-display text-lg font-semibold text-ink">
+                    {area.label}
+                  </h3>
+                  <p className="mt-2 text-[15px] leading-relaxed text-text-muted">
+                    {area.cardSummary}
+                  </p>
                 </SpotlightCard>
               </Link>
             </RevealItem>

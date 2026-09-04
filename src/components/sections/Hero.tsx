@@ -26,7 +26,13 @@ export function Hero() {
                 className="absolute -bottom-1 left-0 h-3 w-full text-amber"
                 preserveAspectRatio="none"
               >
-                <path d="M2 9C60 3 240 3 298 9" stroke="currentColor" strokeWidth="4" fill="none" strokeLinecap="round" />
+                <path
+                  d="M2 9C60 3 240 3 298 9"
+                  stroke="currentColor"
+                  strokeWidth="4"
+                  fill="none"
+                  strokeLinecap="round"
+                />
               </svg>
             </span>
             .
@@ -35,16 +41,24 @@ export function Hero() {
 
         <Reveal delay={0.16} className="mt-6 max-w-xl">
           <p className="text-lg leading-relaxed text-text-muted">
-            Produção, aprovação de clientes, financeiro e CRM em uma única plataforma — com um
-            portal dedicado para cada cliente da sua agência.
+            Produção, aprovação de conteúdos, um portal para seu cliente,
+            financeiro e CRM em uma única plataforma.
           </p>
         </Reveal>
 
-        <Reveal delay={0.24} className="mt-9 flex flex-col items-center gap-3 sm:flex-row">
-          <Button href="/7-dias-gratis" size="lg">
+        <Reveal
+          delay={0.24}
+          className="mt-9 flex flex-col items-center gap-3 sm:flex-row"
+        >
+          <Button href="/7-dias-gratis" className="bg-[#E8C39E]" size="lg">
             7 dias grátis
           </Button>
-          <Button href="/funcionalidades" size="lg" variant="outline-dark" icon={false}>
+          <Button
+            href="/funcionalidades"
+            size="lg"
+            variant="outline-dark"
+            icon={false}
+          >
             Ver funcionalidades
           </Button>
         </Reveal>

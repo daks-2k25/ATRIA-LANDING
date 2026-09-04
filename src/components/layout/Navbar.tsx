@@ -66,11 +66,14 @@ export function Navbar() {
           "mx-auto max-w-6xl rounded-2xl border transition-all duration-300",
           scrolled || open || menuOpen
             ? "border-line bg-white/85 shadow-soft backdrop-blur-md"
-            : "border-transparent bg-white/40 backdrop-blur-sm"
+            : "border-transparent bg-white/40 backdrop-blur-sm",
         )}
       >
         <Container className="flex h-16 items-center justify-between px-4 sm:px-6">
-          <Link href="/" className="flex items-center gap-2 font-display text-xl font-bold text-ink">
+          <Link
+            href="/"
+            className="flex items-center gap-2 font-display text-xl font-bold text-ink"
+          >
             <span className="flex size-8 items-center justify-center rounded-lg bg-ink text-sm text-amber">
               A
             </span>
@@ -88,7 +91,12 @@ export function Navbar() {
               </Link>
             ))}
 
-            <div ref={menuRef} className="relative" onMouseEnter={openMenu} onMouseLeave={scheduleClose}>
+            <div
+              ref={menuRef}
+              className="relative"
+              onMouseEnter={openMenu}
+              onMouseLeave={scheduleClose}
+            >
               <button
                 type="button"
                 onClick={openMenu}
@@ -96,7 +104,12 @@ export function Navbar() {
                 className="flex items-center gap-1 rounded-full px-4 py-2 text-sm font-medium text-text-muted transition-colors duration-200 hover:bg-ink/5 hover:text-ink"
               >
                 Funcionalidades
-                <ChevronDown className={cn("size-3.5 transition-transform duration-200", menuOpen && "rotate-180")} />
+                <ChevronDown
+                  className={cn(
+                    "size-3.5 transition-transform duration-200",
+                    menuOpen && "rotate-180",
+                  )}
+                />
               </button>
 
               <AnimatePresence>
@@ -120,7 +133,9 @@ export function Navbar() {
                             <area.icon className="size-[18px]" />
                           </span>
                           <span>
-                            <span className="block text-sm font-semibold text-ink">{area.label}</span>
+                            <span className="block text-sm font-semibold text-ink">
+                              {area.label}
+                            </span>
                             <span className="mt-0.5 block text-xs leading-snug text-text-muted">
                               {area.navSummary}
                             </span>
@@ -150,7 +165,7 @@ export function Navbar() {
           </nav>
 
           <div className="hidden lg:block">
-            <Button href="/7-dias-gratis" size="md">
+            <Button href="/7-dias-gratis" className="bg-[#E8C39E]" size="md">
               7 dias grátis
             </Button>
           </div>
@@ -194,7 +209,10 @@ export function Navbar() {
               >
                 Funcionalidades
                 <ChevronDown
-                  className={cn("size-4 transition-transform duration-200", mobileMenuExpanded && "rotate-180")}
+                  className={cn(
+                    "size-4 transition-transform duration-200",
+                    mobileMenuExpanded && "rotate-180",
+                  )}
                 />
               </button>
               <AnimatePresence initial={false}>
@@ -224,7 +242,12 @@ export function Navbar() {
               </AnimatePresence>
 
               <div className="p-2 pt-3">
-                <Button href="/7-dias-gratis" size="md" className="w-full" onClick={() => setOpen(false)}>
+                <Button
+                  href="/7-dias-gratis"
+                  size="md"
+                  className="w-full"
+                  onClick={() => setOpen(false)}
+                >
                   7 dias grátis
                 </Button>
               </div>
