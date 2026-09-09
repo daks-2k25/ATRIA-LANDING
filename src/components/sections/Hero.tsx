@@ -1,67 +1,95 @@
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { Kicker } from "@/components/ui/Kicker";
+import { MockupFrame } from "@/components/ui/MockupFrame";
 import { Reveal } from "@/components/ui/Reveal";
 import { Velaris } from "@/components/ui/velaris";
 import { moduleStrip } from "@/data/nav";
 
 export function Hero() {
   return (
-    <section id="top" className="relative overflow-hidden pb-10 pt-36 sm:pt-44">
+    <section id="top" className="relative overflow-x-clip pb-10 pt-36 sm:pt-44">
       <Velaris className="-z-10" />
 
-      <Container className="relative flex flex-col items-center text-center">
-        <Reveal>
-          <Kicker>Feito para agências de marketing e criação</Kicker>
-        </Reveal>
-
-        <Reveal delay={0.08} className="mt-7">
-          <h1 className="max-w-4xl font-display text-4xl font-bold leading-[1.06] tracking-tight text-ink sm:text-5xl lg:text-[3.75rem]">
-            Sua agência organizada, do briefing{" "}
-            <span className="relative whitespace-nowrap">
-              ao pagamento
-              <svg
-                aria-hidden
-                viewBox="0 0 300 12"
-                className="absolute -bottom-1 left-0 h-3 w-full text-amber"
-                preserveAspectRatio="none"
-              >
-                <path
-                  d="M2 9C60 3 240 3 298 9"
-                  stroke="currentColor"
-                  strokeWidth="4"
-                  fill="none"
-                  strokeLinecap="round"
+      <Container className="relative">
+        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-10 xl:gap-16">
+          <div className="relative order-2 lg:order-1">
+            <div
+              aria-hidden
+              className="absolute -inset-6 -z-10 rounded-[3rem] bg-gradient-to-b from-sage/70 to-transparent blur-2xl lg:-inset-10"
+            />
+            <Reveal delay={0.1}>
+              <div className="animate-float">
+                <MockupFrame
+                  src="/screenshots/dashboard.png"
+                  alt="Dashboard do Atria mostrando resultado líquido, reuniões, tarefas e posts agendados"
+                  priority
                 />
-              </svg>
-            </span>
-            .
-          </h1>
-        </Reveal>
+              </div>
+            </Reveal>
+          </div>
 
-        <Reveal delay={0.16} className="mt-6 max-w-xl">
-          <p className="text-lg leading-relaxed text-text-muted">
-            Produção, aprovação de conteúdos, um portal para seu cliente,
-            financeiro e CRM em uma única plataforma.
-          </p>
-        </Reveal>
+          <div className="order-1 flex flex-col items-center text-center lg:order-2 lg:items-start lg:text-left">
+            <Reveal>
+              <Kicker>Feito para agências de marketing e criação</Kicker>
+            </Reveal>
 
-        <Reveal
-          delay={0.24}
-          className="mt-9 flex flex-col items-center gap-3 sm:flex-row"
-        >
-          <Button href="/7-dias-gratis" className="bg-[#E8C39E]" size="lg">
-            7 dias grátis
-          </Button>
-          <Button
-            href="/funcionalidades"
-            size="lg"
-            variant="outline-dark"
-            icon={false}
-          >
-            Ver funcionalidades
-          </Button>
-        </Reveal>
+            <Reveal delay={0.08} className="mt-7">
+              <h1 className="max-w-xl font-display text-4xl font-bold leading-[1.06] tracking-tight text-ink sm:text-5xl lg:text-[3.5rem] lg:leading-[1.05]">
+                Sua agência organizada, do briefing{" "}
+                <span className="relative whitespace-nowrap">
+                  ao pagamento
+                  <svg
+                    aria-hidden
+                    viewBox="0 0 300 12"
+                    className="absolute -bottom-1 left-0 h-3 w-full text-amber"
+                    preserveAspectRatio="none"
+                  >
+                    <path
+                      d="M2 9C60 3 240 3 298 9"
+                      stroke="currentColor"
+                      strokeWidth="4"
+                      fill="none"
+                      strokeLinecap="round"
+                    />
+                  </svg>
+                </span>
+                .
+              </h1>
+            </Reveal>
+
+            <Reveal delay={0.16} className="mt-6 max-w-lg">
+              <p className="text-lg leading-relaxed text-text-muted">
+                Produção, aprovação de conteúdos, um portal para seu cliente,
+                financeiro e CRM em uma única plataforma.
+              </p>
+            </Reveal>
+
+            <Reveal delay={0.24} className="mt-9 w-full max-w-lg">
+              <div className="rounded-full border border-line bg-white  shadow-soft">
+                <Button
+                  href="/7-dias-gratis"
+                  className="w-full bg-[#E8C39E]"
+                  size="lg"
+                >
+                  7 dias grátis
+                </Button>
+              </div>
+              <div className="mt-4 flex flex-col items-center gap-3 sm:flex-row sm:items-center sm:gap-5 lg:items-start">
+                <Button
+                  href="/funcionalidades"
+                  variant="ghost-dark"
+                  icon={false}
+                  className="h-auto px-0"
+                >
+                  Ver funcionalidades
+                </Button>
+                <span className="hidden h-1 w-1 rounded-full bg-line sm:block" />
+                <p className="text-sm text-text-soft">Sem cartão de crédito</p>
+              </div>
+            </Reveal>
+          </div>
+        </div>
       </Container>
 
       <div className="relative mt-16 border-t border-line-soft py-6">
